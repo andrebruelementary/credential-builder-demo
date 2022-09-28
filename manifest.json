@@ -1,0 +1,32 @@
+{
+    "manifest_version": 2,
+    "name": "Decentralized Identity",
+    "version": "0.1",
+    "icons": {
+        "16": "icon16.gif",
+        "32": "icon32.gif",
+        "48": "icon48.gif",
+        "128": "icon128.gif"
+    },
+    "content_scripts": [
+        {
+            "matches": [
+                "<all_urls>"
+            ],
+            "js":["content.js"]
+        }
+    ],
+    "background": {
+        "scripts": ["background.js"]
+    },
+    "permissions" : [
+        "activeTab",
+        "declarativeContent"
+    ],
+    "browser_action": {
+        "default_icon": "icon-page-action.png",
+        "default_popup": "extension-index.html",
+        "default_title": "Decentralized Identity"
+    },
+    "content_security_policy": "script-src 'self' https://cdn.jsdelivr.net; object-src 'self';"
+}

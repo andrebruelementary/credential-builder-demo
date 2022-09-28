@@ -1,0 +1,47 @@
+<html>
+    <head>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+        <link rel="stylesheet" href="extension-styles.css">
+    </head>
+    <body>
+        <ul class="nav nav-tabs" id="myTab" role="tablist">
+            <li class="nav-item" role="presentation">
+              <button class="nav-link active" id="did-tab" data-bs-toggle="tab" data-bs-target="#did" type="button" role="tab" aria-controls="did" aria-selected="true">My DID</button>
+            </li>
+            <li class="nav-item" role="presentation">
+              <button class="nav-link" id="profile-tab" data-bs-toggle="tab" data-bs-target="#profile" type="button" role="tab" aria-controls="profile" aria-selected="false">Profile</button>
+            </li>
+            <li class="nav-item" role="presentation">
+              <button class="nav-link" id="contacts-tab" data-bs-toggle="tab" data-bs-target="#contacts" type="button" role="tab" aria-controls="contacts" aria-selected="false">Contacts</button>
+            </li>
+          </ul>
+          <div class="tab-content" id="myTabContent">
+            <div class="tab-pane fade show active" id="did" role="tabpanel" aria-labelledby="did-tab">
+                On this tab you can create your Decentralized identifier (DID).
+                <br>
+                <div>
+                  <br>
+                  If you do not have a DID, get started by clicking "New DID" button. This will create a completely new DID for you
+                  <br>
+                  <input class="btn btn-secondary" type="button" value="New DID">
+                </div>
+                <div>
+                  <br>
+                  If you already have an existing DID, you can import it by clicking the "Import DID" and providing you seed phrases
+                  <br>
+                  <input class="btn btn-secondary" type="button" value="Import DID">
+                </div>
+                <img id="footer_img" src="logo.png" alt="">
+            </div>
+            <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
+                Profile content
+                <!--<input class="btn btn-primary" type="button" value="Input">-->
+            </div>
+            <div class="tab-pane fade" id="contacts" role="tabpanel" aria-labelledby="contacts-tab">Contacts content</div>
+          </div>
+
+        <br>
+       
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8" crossorigin="anonymous"></script>
+    </body>
+</html>
