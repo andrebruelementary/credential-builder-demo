@@ -19,10 +19,6 @@
     "background": {
         "scripts": ["background.js"]
     },
-    "permissions" : [
-        "activeTab",
-        "declarativeContent"
-    ],
     "browser_action": {
         "default_icon": "icon-page-action.png",
         "default_popup": "extension-index.html",
