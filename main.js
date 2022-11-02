@@ -1,1 +1,0 @@
-alert('action button clicked');
