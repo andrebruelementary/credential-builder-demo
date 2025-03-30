@@ -39,14 +39,34 @@ This repository contains a reusable browser extension for building and issuing D
    - Enable "Developer mode" in the top-right corner
    - Click "Load unpacked" and select the `dist` folder from the project
 
-### Creating a GitHub Template Repository
+## Template Repository Integration
 
-To use the GitHub template functionality, create a public repository with this structure:
+This extension is pre-configured to work with the [Verifiable Credential Templates](https://github.com/andrebruelementary/verifiable-credential-templates) repository, which contains a growing collection of standardized credential templates organized by category.
+
+### Using the Public Template Repository
+
+The extension automatically loads templates from this public repository, giving you immediate access to a variety of credential types without any additional configuration. We strongly encourage you to:
+
+1. **Use existing templates** from the public repository when possible
+2. **Contribute new templates** back to the repository (through the "Suggest for Public Repository" feature)
+3. **Join our collaborative effort** to build a comprehensive library of reusable templates
+
+This approach offers several advantages:
+- Immediate access to high-quality templates
+- Standardization across different DID implementations
+- Community-vetted credential designs
+- Continuous expansion as new templates are added
+
+Do not be discouraged by the placement of the public templates in the Elementary Software domain and let this be a reason for you to not make use of it. This was not done to put ownership of the repository in the hands of Elementary Software, but instead to be able to deliver the proof of concept without needing to tackle obstacles like getting placement allowance from Intersect, Identus or any other body. We are open to suggestions for a new placement. Check out the templates repository for instructions on how to supply recommendations like this or becoming a repository contributor for your DID product.
+
+### Template Structure
+
+For reference, templates in the repository follow this directory structure:
 
 ```
 credential-templates/
 ├── education/
-│   ├── diploma.json
+│   ├── university-diploma.json
 │   └── course-certificate.json
 ├── professional/
 │   ├── employment.json
@@ -55,7 +75,7 @@ credential-templates/
     └── basic-id.json
 ```
 
-Each JSON template should follow this format:
+Each template uses this JSON format:
 
 ```json
 {
@@ -73,6 +93,18 @@ Each JSON template should follow this format:
 }
 ```
 
+### Custom Repository Configuration (Advanced)
+
+While we recommend using the shared public repository, you can point the extension to your own template repository by modifying the configuration in `src/services/githubService.ts`:
+
+```typescript
+private static readonly GITHUB_REPO_URL = 'https://api.github.com/repos/your-username/your-template-repo/contents';
+private static readonly RAW_GITHUB_URL = 'https://raw.githubusercontent.com/your-username/your-template-repo/main';
+```
+
+However, consider that using the shared public repository helps build a more standardized ecosystem of credential templates that benefit the entire Cardano Identus community.
+
+
 ## Usage
 
 1. Click on the Credential Builder Demo extension icon in your browser
@@ -81,20 +113,7 @@ Each JSON template should follow this format:
 4. Select a contact to issue the credential to
 5. Click "Issue credential" to generate the credential
 
-## Customization
-
-### GitHub Repository
-
-To use your own GitHub repository for templates, modify the `GITHUB_REPO_URL` and `RAW_GITHUB_URL` constants in `src/services/githubService.ts`.
-The hope is however, that you will connect with our GitHub so that we can build a large and useful collection of reusable templates together.
-The extension is configured to load templates from the public repository:
-https://github.com/andrebruelementary/verifiable-credential-templates
-
-This repository contains example templates organized by category.
-
-Currently this GitHub placement is in the Elementary Software GitHub, but we are positive to move this into another relevant place. If you have any input about possible placement, do not hesitate to get in contact with us and we can find solution that benefit the whole Cardano Identus community.
-
-### Adding Custom Contacts
+## Adding Custom Contacts
 
 Contacts are stored in browser local storage. You can add custom contacts by modifying the `contacts` array in the background script or by implementing a contact management UI.
 
