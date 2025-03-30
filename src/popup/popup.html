@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Identus Credential Builder</title>
+  <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+  <div class="app-container">
+    <div class="app-layout">
+      <div id="credential-builder" class="credential-builder"></div>
+      
+      <div class="contact-section">
+        <h2>Issue to contact</h2>
+        <div class="contact-search">
+          <input type="text" id="contact-search" placeholder="Search contacts">
+        </div>
+        <div class="contacts-list" id="contacts-list">
+          <!-- Contacts will be added here dynamically -->
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <!-- Template for a contact item -->
+  <template id="contact-item-template">
+    <div class="contact-item">
+      <div class="contact-avatar">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+          <circle cx="12" cy="7" r="4"></circle>
+        </svg>
+      </div>
+      <div class="contact-name"></div>
+    </div>
+  </template>
+  
+  <script src="popup.js"></script>
+</body>
+</html>
